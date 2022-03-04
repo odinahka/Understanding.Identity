@@ -1,0 +1,31 @@
+﻿@page
+@model Web_App.Pages.Account.LoginTwoFactorModel
+@{
+}
+<p>
+    <h3>
+        Please enter the code from your email address
+    </h3>
+</p>
+<div class="container border" stye="padding:20px">
+    <form method = "post">
+        <div class="text-danger" asp-validation-summary = "All"></div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="EmailMFA.MFASecurityCode" ></label>
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" asp-for="EmailMFA.MFASecurityCode" />
+            </div>
+            <span class="text-danger" asp-validation-for="EmailMFA.MFASecurityCode"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <input type="submit" class="btn btn-primary" value="Verify" />
+            </div>
+            <div class="col">
+                <input type="hidden" asp-for="EmailMFA.RememberMe" />
+            </div>
+        </div>
+    </form>
+</div>
